@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-group :test, :development do
+gem "faraday"
+
 group :development do
   gem "rake"
 

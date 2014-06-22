@@ -9,6 +9,7 @@ module SponsorPay
       autoload :Application,       from_file("application")
       autoload :RequestParameters, from_file("request_parameters")
       autoload :Client,  from_file("client")
+      autoload :HttpClient,        from_file("http_client")
 
       autoload :Error,                    from_file("errors")
       autoload :RequestError,             from_file("errors")
