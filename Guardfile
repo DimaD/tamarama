@@ -4,7 +4,7 @@
 notification :emacs
 notification :terminal_notifier
 
-guard :rspec, cmd: "bundle exec rspec" do
+guard :rspec, cmd: "bundle exec rspec", all_on_start: true, failed_mode: :none do
   watch(%r{^spec/.+_spec\.rb$})
 
   watch(%r{^lib/sponsor_pay/(.+)/(.+)\.rb$}) { |m| "spec/sponsor_pay/#{m[1]}/#{m[2]}_spec.rb" }
