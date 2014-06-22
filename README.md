@@ -65,3 +65,11 @@ Resulting HTML is placed into `doc/all` directory and you can open it on Mac OS 
 ```shell
 open doc/all/index.html
 ```
+
+## API Notes
+
+Parameter *os_version* is marked as mandatory in API doc but in fact it is not.
+
+Correct format of *locale* is not described in details. Link to RFC or list of valid locales could be helpful.
+
+Challenge text mentions parameter `device_id` which is not described in the API documentation, but it seems to be called `openudid`.
