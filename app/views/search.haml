@@ -1,0 +1,11 @@
+.row
+  .span3
+    = haml :form, locals: { form: form, show_warnings: true }
+
+  .span9
+    - if form.valid?
+      - if offers[:error].nil?
+        = haml :offers, locals: { data: offers[:data] }
+      - else
+        .alert.alert-error
+          There was an error communicating with server.

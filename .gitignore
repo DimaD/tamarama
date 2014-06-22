@@ -29,3 +29,6 @@ doc
 .rvmrc
 
 Gemfile.lock
+
+# Do not include files with sensitive data into version control
+config/sponsor_pay.yml

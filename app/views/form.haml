@@ -1,0 +1,23 @@
+%form{action: "/search", method: "get"}
+  %fieldset
+    %legend Search Offers
+    %label.control-label{for: "search-uid"}
+      uid
+      %sup
+        *
+
+    %input#search-uid{type: "text", name: "uid", value: form.uid}
+    %span.help-block uid is required
+
+
+    %label.control-label{for: "search-pub0"} pub0
+    %input#search-pub0{type: "text", name: "pub0", value: form.pub0}
+
+    %label.control-label{for: "search-page"} page
+    %input#search-page{type: "text", name: "page", value: form.page}
+
+    - if show_warnings and !form.valid?
+      .alert.alert-error
+        To search offers please specify uid.
+    .clear
+    %button.btn.btn-primary{type: "submit"} Search
