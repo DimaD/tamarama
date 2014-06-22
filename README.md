@@ -4,6 +4,10 @@ Tamarama is code written for SponsorPay Ruby Developer Challenge.
 
 Tamarama is the name of the [beach in Sydney, Australia](https://en.wikipedia.org/wiki/Tamarama).
 
+I have designed this application in the same way I would write my production code. Code is logically divided into 2 parts:
+  * Classes to work with API. They are independent from web interface and could be extracted into separate gem.
+  * Web application. It is written in Sinatra and uses classes from part 1.
+
 # How To Run
 
 ## Installing Dependencies
