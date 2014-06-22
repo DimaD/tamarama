@@ -12,6 +12,11 @@
 /log/*.log
 /tmp
 
+# Ignore automatically generated documentation
+
+doc
+.yardoc
+
 .DS_Store
 *~
 *#
