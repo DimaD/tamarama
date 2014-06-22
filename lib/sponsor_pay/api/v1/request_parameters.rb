@@ -24,12 +24,19 @@ module SponsorPay
 
         # @return [Hash<Symbol => Object>]
         def to_hash
-          parameters.merge(hashkey: signature)
+          parameters_with_flattened_arrays.merge(hashkey: signature)
         end
 
         protected
-        def ordered_and_concatenated_parameters
+        def parameters_with_flattened_arrays
           parameters
+            .to_a
+            .map { |k,v| [k, v.kind_of?(Array) ? v.join(",") : v] }
+            .to_h
+        end
+
+        def ordered_and_concatenated_parameters
+          parameters_with_flattened_arrays
             .to_a
             .sort_by(&:first)
             .map { |parameter| "%s=%s" % parameter }

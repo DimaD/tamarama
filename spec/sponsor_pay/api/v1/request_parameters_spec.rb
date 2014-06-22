@@ -62,4 +62,24 @@ describe SponsorPay::API::V1::RequestParameters do
       end
     end
   end
+
+  context "when parameters include arrays" do
+    let(:parameters) do
+      {
+        offer_types: [111, 112]
+      }
+    end
+
+    let(:expected_signature) { "b2100aceba17f687b00dbbd94e32a342e63fb04f" }
+
+    subject { described_class.new(parameters, api_key) }
+
+    it "transforms arrays into string of values joined with comma" do
+      expect(subject.to_hash).to include(offer_types: "111,112")
+    end
+
+    it "calculates signature based on arrays joined with comma" do
+      expect(subject.signature).to eq(expected_signature)
+    end
+  end
 end
