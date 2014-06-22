@@ -22,6 +22,18 @@ Now you can pull in dependencies for this project. Step into project directory i
 bundle install -j2
 ```
 
+## Making Config
+
+Storing sensitive information like passwords or API keys under version control is not a good idea in my opinion. That is why you need to make config with App ID and API key before running the app or it's specs.
+
+First, copy provided sample
+
+```shell
+cp config/sponsor_pay.yml.sample config/sponsor_pay.yml
+```
+
+Then edit `config/sponsor_pay.yml`.
+
 ## Running Tests
 
 Tests (specs) are written in RSpec and could be run with rake:
@@ -29,6 +41,16 @@ Tests (specs) are written in RSpec and could be run with rake:
 ```shell
 bundle exec spec
 ```
+
+## Running Web Application
+
+I have added puma web server to dependencies so after making config with API key you can run
+
+```shell
+bundle exec puma -p 8080
+```
+
+and then load web app in the browser using address `http://localhost:8080`.
 
 ## Generating Documentation
 
