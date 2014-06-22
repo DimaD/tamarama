@@ -19,7 +19,7 @@ module SponsorPay
 
         # @return [String] SHA1 signature rendered as hexademical number
         def signature
-          @api_key.sign(ordered_and_concatenated_parameters)
+          @api_key.sign_request(ordered_and_concatenated_parameters)
         end
 
         # @return [Hash<Symbol => Object>]
