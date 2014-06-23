@@ -9,5 +9,5 @@
       .title= offer["title"]
       .payout= offer["payout"]
       - lowres_thumbnail_url = (offer["thumbnail"] || {})["lowres"]
-
-      %img{src: lowres_thumbnail_url, style: "width: 60px; height: 60px;"}
+      .thumbnail
+        %img{src: lowres_thumbnail_url, style: "width: 60px; height: 60px;"}
